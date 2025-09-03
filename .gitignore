@@ -1,0 +1,13 @@
+# File extensions
+*.pt
+*.pth
+*.tar
+*.ckpt
+*.out
+*.npz
+*.png
+*.mat
+*.nwb
+
+# Directories
+**/__pycache__
