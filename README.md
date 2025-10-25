@@ -3,7 +3,7 @@
 
 # Spiking neural activity data recorded from rodents 
 
-~448B uncompressed tokens of spiking neural activity data recorded from rodents (tokens=neurons x time bins). Unless otherwise noted, the data consist of spike counts in 20 ms time bins recorded from each neuron.
+~450B uncompressed tokens of spiking neural activity data recorded from rodents (tokens=neurons x time bins). Unless otherwise noted, the data consist of spike counts in 20 ms time bins recorded from each neuron.
 
 This repository contains the code and instructions for building the dataset from scratch. The actual final dataset is hosted at [this](https://huggingface.co/datasets/eminorhan/neural-pile-rodent) public HF repository.
 
@@ -24,6 +24,7 @@ The current component datasets and token counts per dataset are as follows:
 | Steinmetz   | 7,881,422,592     | [dandi:000017](https://dandiarchive.org/dandiset/000017)                                                                       | [link](data/steinmetz)       | mouse   | 10       |       39 |
 | Le Merre    | 3,899,259,525     | [dandi:001260](https://dandiarchive.org/dandiset/001260)                                                                       | [link](data/lemerre)         | mouse   | 41       |       74 |
 | Peyrache    | 2,198,184,372     | [dandi:000056](https://dandiarchive.org/dandiset/000056)                                                                       | [link](data/peyrache)        | mouse   | 7        |       40 |
+| Prince      | 1,921,336,974     | [dandi:001371](https://dandiarchive.org/dandiset/001371)                                                                       | [link](data/prince)          | mouse   | 7        |       66 |
 | Finkelstein | 1,313,786,316     | [dandi:000060](https://dandiarchive.org/dandiset/000060)                                                                       | [link](data/finkelstein)     | mouse   | 9        |       98 |
 | Giocomo     | 1,083,328,404     | [dandi:000053](https://dandiarchive.org/dandiset/000053)                                                                       | [link](data/giocomo)         | mouse   | 34       |      349 |
 | Steinmetz-2 | 684,731,334       | [figshare:7739750](https://figshare.com/articles/dataset/Eight-probe_Neuropixels_recordings_during_spontaneous_behaviors/7739750)| [link](data/steinmetz-2)   | mouse   | 3        |        3 |
@@ -33,7 +34,7 @@ The current component datasets and token counts per dataset are as follows:
 | Li          | 260,807,325       | [dandi:000010](https://dandiarchive.org/dandiset/000010)                                                                       | [link](data/li)              | mouse   | 23       |       99 |
 | Fujisawa    | 132,563,010       | [dandi:000067](https://dandiarchive.org/dandiset/000067)                                                                       | [link](data/fujisawa)        | rat     | 3        |       10 |
 
-**Total number of tokens:** 447,695,422,953
+**Total number of tokens:** 449,616,759,927
 
  The combined dataset takes up about 47 GB when stored as `.parquet` files and roughly 443 GB when stored as memory-mapped `.arrow` files (see [this](https://stackoverflow.com/a/56481636) for an explanation of the differences between these file formats). The HF `datasets` library uses `.arrow` files for local caching, so you will need at least this much free disk space in order to be able to utilize it.
 
