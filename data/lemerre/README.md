@@ -12,7 +12,7 @@ python create_dataset.py --hf_repo_name "eminorhan/lemerre" --token_count_limit 
 ```
 where `hf_repo_name` is the HF dataset repository name where the processed data will be pushed to, `token_count_limit` is the maximum token count per dataset row (sessions with larger token counts than this will be split into smaller chunks), and `bin_size` is bin size in seconds for aggregating spike counts (default: 20 ms).
 
-**Token count:** 3,899,259,525
+**Token count:** 3,903,005,243
 
 **HF repo:** https://huggingface.co/datasets/eminorhan/lemerre
 

@@ -22,7 +22,7 @@ The current component datasets and token counts per dataset are as follows:
 | Illusion    | 13,246,412,456    | [dandi:000248](https://dandiarchive.org/dandiset/000248)                                                                       | [link](data/illusion)        | mouse   | 12       |       12 |
 | Huszar      | 8,812,474,629     | [dandi:000552](https://dandiarchive.org/dandiset/000552)                                                                       | [link](data/huszar)          | mouse   | 17       |       65 |
 | Steinmetz   | 7,881,422,592     | [dandi:000017](https://dandiarchive.org/dandiset/000017)                                                                       | [link](data/steinmetz)       | mouse   | 10       |       39 |
-| Le Merre    | 3,899,259,525     | [dandi:001260](https://dandiarchive.org/dandiset/001260)                                                                       | [link](data/lemerre)         | mouse   | 41       |       74 |
+| Le Merre    | 3,903,005,243     | [dandi:001260](https://dandiarchive.org/dandiset/001260)                                                                       | [link](data/lemerre)         | mouse   | 41       |       74 |
 | Peyrache    | 2,198,184,372     | [dandi:000056](https://dandiarchive.org/dandiset/000056)                                                                       | [link](data/peyrache)        | mouse   | 7        |       40 |
 | Prince      | 1,921,336,974     | [dandi:001371](https://dandiarchive.org/dandiset/001371)                                                                       | [link](data/prince)          | mouse   | 7        |       66 |
 | Senzai      | 1,433,511,102     | [dandi:000166](https://dandiarchive.org/dandiset/000166)                                                                       | [link](data/senzai)          | mouse   | 19       |       19 |
@@ -36,7 +36,7 @@ The current component datasets and token counts per dataset are as follows:
 | Li          | 260,807,325       | [dandi:000010](https://dandiarchive.org/dandiset/000010)                                                                       | [link](data/li)              | mouse   | 23       |       99 |
 | Fujisawa    | 132,563,010       | [dandi:000067](https://dandiarchive.org/dandiset/000067)                                                                       | [link](data/fujisawa)        | rat     | 3        |       10 |
 
-**Total number of tokens:** 452,208,570,792
+**Total number of tokens:** 452,212,316,510
 
  The combined dataset takes up about 47 GB when stored as `.parquet` files and roughly 443 GB when stored as memory-mapped `.arrow` files (see [this](https://stackoverflow.com/a/56481636) for an explanation of the differences between these file formats). The HF `datasets` library uses `.arrow` files for local caching, so you will need at least this much free disk space in order to be able to utilize it.
 
