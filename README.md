@@ -84,4 +84,4 @@ Users also have the option to visualize `n_examples` random examples from each c
 python visualize_datasets.py --plot_all --n_examples 9
 ```
 
-This will save the visualizations for all component dataset in a folder called `visuals` as in [here](visuals).
+This will save the visualizations for all component datasets in a folder called `visuals` as in [here](visuals).
