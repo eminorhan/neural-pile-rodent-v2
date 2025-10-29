@@ -56,7 +56,7 @@ def visualize_dataset(repo_name, n_examples):
 
 def get_args_parser():
     parser = argparse.ArgumentParser('Consolidate data in multiple files into a single file', add_help=False)
-    parser.add_argument('--repo_name',default="eminorhan/lemerre",type=str, help='HF repo name')
+    parser.add_argument('--repo_name',default="eminorhan/fujisawa",type=str, help='HF repo name')
     parser.add_argument('--n_examples',default=6,type=int, help='number of examples to display')
     return parser
 
@@ -66,7 +66,8 @@ if __name__ == '__main__':
     # repo_list = [
     #     "eminorhan/vbn", "eminorhan/ibl", "eminorhan/shield", "eminorhan/vcn", "eminorhan/vcn-2", "eminorhan/v2h", "eminorhan/petersen",
     #     "eminorhan/oddball", "eminorhan/illusion", "eminorhan/huszar", "eminorhan/steinmetz", "eminorhan/steinmetz-2", "eminorhan/finkelstein",
-    #     "eminorhan/giocomo", "eminorhan/mehrotra", "eminorhan/iurilli", "eminorhan/gonzalez", "eminorhan/li", "eminorhan/lemerre",
+    #     "eminorhan/giocomo", "eminorhan/mehrotra", "eminorhan/iurilli", "eminorhan/gonzalez", "eminorhan/li", "eminorhan/lemerre", "eminorhan/peyrache",
+    #     "eminorhan/prince", "eminorhan/senzai", "eminorhan/grosmark", "eminorhan/jaramillo", "eminorhan/fujisawa",
     # ]
 
     args = get_args_parser()

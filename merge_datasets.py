@@ -29,7 +29,7 @@ def concatenate_hf_datasets_and_push(repo_list, new_repo_name, test_size):
 
     # push to hub
     ds.push_to_hub(new_repo_name, max_shard_size="1GB", token=True)
-    print(f"Concatenated dataset pushed to {new_repo_name} on the Hugging Face Hub. Train / test len: {len(ds["train"])} / {len(ds["test"])}")
+    print(f"Concatenated dataset pushed to {new_repo_name} on the Hugging Face Hub. Train / test len: {len(ds['train'])} / {len(ds['test'])}")
 
 
 def get_args_parser():
@@ -47,8 +47,9 @@ if __name__ == '__main__':
     # list of component dataset repositories to be concatenated
     repo_list = [
         "eminorhan/vbn", "eminorhan/ibl", "eminorhan/shield", "eminorhan/vcn", "eminorhan/vcn-2", "eminorhan/v2h", "eminorhan/petersen",
-        "eminorhan/oddball", "eminorhan/illusion", "eminorhan/huszar", "eminorhan/steinmetz", "eminorhan/steinmetz-2", "eminorhan/finkelstein",
-        "eminorhan/giocomo", "eminorhan/mehrotra", "eminorhan/iurilli", "eminorhan/gonzalez", "eminorhan/li" 
+        "eminorhan/oddball", "eminorhan/illusion", "eminorhan/huszar", "eminorhan/steinmetz", "eminorhan/lemerre", "eminorhan/peyrache", 
+        "eminorhan/prince", "eminorhan/senzai", "eminorhan/steinmetz-2", "eminorhan/jaramillo", "eminorhan/finkelstein", "eminorhan/grosmark", 
+        "eminorhan/giocomo", "eminorhan/mehrotra", "eminorhan/iurilli", "eminorhan/gonzalez", "eminorhan/li", "eminorhan/fujisawa"
     ]
 
     concatenate_hf_datasets_and_push(repo_list, args.hf_repo_name, args.test_size)
