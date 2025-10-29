@@ -1,9 +1,17 @@
+import os
 import argparse
 import numpy as np
 import matplotlib.pylab as plt
 import matplotlib as mp
 from datasets import load_dataset
 
+# list of admissible dataset repositories (ordered from largest to smallest)
+REPO_LIST = [
+    "eminorhan/vbn", "eminorhan/ibl", "eminorhan/shield", "eminorhan/vcn", "eminorhan/vcn-2", "eminorhan/v2h", "eminorhan/petersen",
+    "eminorhan/oddball", "eminorhan/illusion", "eminorhan/huszar", "eminorhan/steinmetz", "eminorhan/steinmetz-2", "eminorhan/finkelstein",
+    "eminorhan/giocomo", "eminorhan/mehrotra", "eminorhan/iurilli", "eminorhan/gonzalez", "eminorhan/li", "eminorhan/lemerre", "eminorhan/peyrache",
+    "eminorhan/prince", "eminorhan/senzai", "eminorhan/grosmark", "eminorhan/jaramillo", "eminorhan/fujisawa",
+]
 
 def visualize_dataset(repo_name, n_examples):
     """
@@ -13,7 +21,7 @@ def visualize_dataset(repo_name, n_examples):
     Args:
         repo_name (str): The name for the dataset repository.
     """
-
+    print('Loading dataset:', repo_name)
     ds = load_dataset(repo_name, split="train")
     print('Number of rows in dataset:', len(ds))
 
@@ -51,27 +59,34 @@ def visualize_dataset(repo_name, n_examples):
     mp.rcParams['patch.linewidth'] = 1.15
     mp.rcParams['font.sans-serif'] = ['FreeSans']
     mp.rcParams['mathtext.fontset'] = 'cm'
-    plt.savefig(repo_name.split("/")[-1] + '.jpg', bbox_inches='tight', dpi=300)
 
+    os.makedirs('visuals', exist_ok=True)
+    save_path = os.path.join(output_dir, repo_name.split("/")[-1] + '.jpg')
+    plt.savefig(save_path, bbox_inches='tight', dpi=300)
+    print(f"Saved figure to {save_path}")
+    plt.close(fig)
 
 def get_args_parser():
-    parser = argparse.ArgumentParser('Consolidate data in multiple files into a single file', add_help=False)
-    parser.add_argument('--repo_name',default="eminorhan/fujisawa",type=str, help='HF repo name')
-    parser.add_argument('--n_examples',default=6,type=int, help='number of examples to display')
+    parser = argparse.ArgumentParser(description='Plot random samples from component datasets as a quick visual sanity check.')
+    
+    # Group for mutually exclusive arguments
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument('--repo_name', type=str, choices=REPO_LIST, default="eminorhan/fujisawa", help='Visualize random samples from a single specified component dataset.')
+    group.add_argument('--plot_all', action='store_true', help='Visualize random samples from all component datasets in REPO_LIST.')
+    parser.add_argument('--n_examples', default=9, type=int, help='Number of random samples to display.')
     return parser
 
 if __name__ == '__main__':
+    parser = get_args_parser()
+    args = parser.parse_args()
+    print("Running with arguments:", args)
 
-    # list of admissible dataset repositories
-    # repo_list = [
-    #     "eminorhan/vbn", "eminorhan/ibl", "eminorhan/shield", "eminorhan/vcn", "eminorhan/vcn-2", "eminorhan/v2h", "eminorhan/petersen",
-    #     "eminorhan/oddball", "eminorhan/illusion", "eminorhan/huszar", "eminorhan/steinmetz", "eminorhan/steinmetz-2", "eminorhan/finkelstein",
-    #     "eminorhan/giocomo", "eminorhan/mehrotra", "eminorhan/iurilli", "eminorhan/gonzalez", "eminorhan/li", "eminorhan/lemerre", "eminorhan/peyrache",
-    #     "eminorhan/prince", "eminorhan/senzai", "eminorhan/grosmark", "eminorhan/jaramillo", "eminorhan/fujisawa",
-    # ]
-
-    args = get_args_parser()
-    args = args.parse_args()
-    print(args)
-
-    visualize_dataset(args.repo_name, args.n_examples)
+    if args.plot_all:
+        print("\n--- Plotting all datasets ---")
+        for repo_name in REPO_LIST:
+            visualize_dataset(repo_name, args.n_examples)
+            print("-" * 20)
+    else:
+        # If not plotting all, args.repo_name is guaranteed to exist
+        print(f"\n--- Plotting single dataset: {args.repo_name} ---")
+        visualize_dataset(args.repo_name, args.n_examples)

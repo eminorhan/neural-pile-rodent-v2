@@ -73,8 +73,15 @@ or something along these lines (you can play with the `Retry` settings). This wi
 ## Visualizing the datasets
 [`visualize_dataset.py`](visualize_dataset.py) provides some basic functionality to visualize random samples from the datasets:
 ```python
-python visualize_datasets.py --repo_name 'eminorhan/vbn' --n_examples 6
+python visualize_datasets.py --repo_name 'eminorhan/vbn' --n_examples 9
 ```
 This will randomly sample `n_examples` examples from the corresponding dataset and visualize them as below, where *x* is the time axis (binned into 20 ms windows) and the *y* axis represents the recorded units:
 
-![](assets/vbn.jpg)
+![](visuals/vbn.jpg)
+
+Users also have the option to visualize `n_examples` random examples from each component dataset by calling:
+```python
+python visualize_datasets.py --plot_all --n_examples 9
+```
+
+This will save the visualizations for all component dataset in a folder called `visuals` as in [here](visuals).
