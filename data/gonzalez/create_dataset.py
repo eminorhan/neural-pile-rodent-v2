@@ -82,7 +82,7 @@ if __name__ == '__main__':
 
             # we will save just spike activity
             units = nwbfile.acquisition["firing_rates"].data[:]
-            spike_counts = np.round(units.T).astype(np.uint8)  # spike count matrix (nxt: n is #channels, t is time bins)
+            spike_counts = np.round(units.T / 50).astype(np.uint8)  # spike count matrix (nxt: n is #channels, t is time bins)
 
             # subject, session identifiers
             subject_id, session_id = extract_subject_session_id(file_path)

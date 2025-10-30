@@ -61,17 +61,17 @@ def visualize_dataset(repo_name, n_examples):
     mp.rcParams['mathtext.fontset'] = 'cm'
 
     os.makedirs('visuals', exist_ok=True)
-    save_path = os.path.join(output_dir, repo_name.split("/")[-1] + '.jpg')
+    save_path = os.path.join('visuals', repo_name.split("/")[-1] + '.jpg')
     plt.savefig(save_path, bbox_inches='tight', dpi=300)
     print(f"Saved figure to {save_path}")
-    plt.close(fig)
+    plt.close()
 
 def get_args_parser():
     parser = argparse.ArgumentParser(description='Plot random samples from component datasets as a quick visual sanity check.')
     
     # Group for mutually exclusive arguments
     group = parser.add_mutually_exclusive_group()
-    group.add_argument('--repo_name', type=str, choices=REPO_LIST, default="eminorhan/fujisawa", help='Visualize random samples from a single specified component dataset.')
+    group.add_argument('--repo_name', type=str, choices=REPO_LIST, default="eminorhan/v2h", help='Visualize random samples from a single specified component dataset.')
     group.add_argument('--plot_all', action='store_true', help='Visualize random samples from all component datasets in REPO_LIST.')
     parser.add_argument('--n_examples', default=9, type=int, help='Number of random samples to display.')
     return parser

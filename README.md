@@ -71,13 +71,13 @@ def _default_backend_factory() -> requests.Session:
 or something along these lines (you can play with the `Retry` settings). This will prevent the premature termination of the job when faced with connection issues. 
 
 ## Visualizing the datasets
-[`visualize_dataset.py`](visualize_dataset.py) provides some basic functionality to visualize random samples from the datasets:
+[`visualize_dataset.py`](visualize_dataset.py) provides some basic functionality to visualize random samples from the datasets as a basic sanity check:
 ```python
-python visualize_datasets.py --repo_name 'eminorhan/vbn' --n_examples 9
+python visualize_datasets.py --repo_name 'eminorhan/v2h' --n_examples 9
 ```
 This will randomly sample `n_examples` examples from the corresponding dataset and visualize them as below, where *x* is the time axis (binned into 20 ms windows) and the *y* axis represents the recorded units:
 
-![](visuals/vbn.jpg)
+![](visuals/v2h.jpg)
 
 Users also have the option to visualize `n_examples` random examples from each component dataset by calling:
 ```python
