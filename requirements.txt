@@ -1,8 +1,8 @@
-datasets==3.3.2
-matplotlib==3.10.1
-numpy==2.1.2
-pandas==2.2.3
-pynwb==3.0.0
-requests==2.32.3
-scipy==1.15.2
-dandi==0.67.2
+datasets==4.0.0
+matplotlib==3.10.7
+numpy==1.24.4
+pandas==1.5.3
+pynwb==3.1.2
+Requests==2.32.5
+scipy==1.10.1
+dandi==0.73.0
