@@ -48,8 +48,8 @@ if __name__ == '__main__':
     repo_list = [
         "eminorhan/vbn", "eminorhan/ibl", "eminorhan/shield", "eminorhan/vcn", "eminorhan/vcn-2", "eminorhan/v2h", "eminorhan/petersen",
         "eminorhan/oddball", "eminorhan/illusion", "eminorhan/huszar", "eminorhan/steinmetz", "eminorhan/lemerre", "eminorhan/peyrache", 
-        "eminorhan/prince", "eminorhan/senzai", "eminorhan/steinmetz-2", "eminorhan/jaramillo", "eminorhan/finkelstein", "eminorhan/grosmark", 
-        "eminorhan/giocomo", "eminorhan/mehrotra", "eminorhan/iurilli", "eminorhan/gonzalez", "eminorhan/li", "eminorhan/fujisawa"
+        "eminorhan/prince", "eminorhan/senzai", "eminorhan/finkelstein", "eminorhan/grosmark", "eminorhan/giocomo", "eminorhan/steinmetz-2", 
+        "eminorhan/jaramillo", "eminorhan/mehrotra", "eminorhan/iurilli", "eminorhan/gonzalez", "eminorhan/li", "eminorhan/fujisawa"
     ]
 
     concatenate_hf_datasets_and_push(repo_list, args.hf_repo_name, args.test_size)
