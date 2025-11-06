@@ -77,6 +77,7 @@ def get_args_parser():
     return parser
 
 if __name__ == '__main__':
+    
     parser = get_args_parser()
     args = parser.parse_args()
     print("Running with arguments:", args)
